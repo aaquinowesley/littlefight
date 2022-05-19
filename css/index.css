@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+    --cor-neon: green;
+    cursor: url(/gtav.cur), default;
+}
+
+@font-face {
+    font-family: 'Royal Fighter';
+    src: url('/font/RoyalFighter.otf') format('opentype'),
+    url('/font/RoyalFighterDemo.ttf') format('truetype');
+}
+
+body::before{
+    content: '';
+    background-image: url('/assets/bg.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    opacity: 0.2;
+    z-index: -1;
+    
+}
+
+.main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo{
+    text-align: center;
+    color: red;
+    font-family: "Royal Fighter";
+    animation: animate 1.5s linear infinite;
+}
+
+.personagens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.lista-de-personagens{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    justify-content: center;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.lista-de-personagens img{
+    width: 70px;
+    animation: neon 2s alternate infinite ease-in;
+    animation-direction: alternate;
+}
+
+.lista-de-personagens img:hover{
+    border: 2px solid lightblue;
+    transform: scale(1);
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes neon{
+    0%{
+        box-shadow: 0 0 5px lightblue, 0 0 2.5px lightblue, 0 0 15px lightblue, 0 0 20px rgb(31, 199, 255);
+    }
+    to{
+        box-shadow: 0 0 2.5px lightblue, 0 0 2.5px rgb(41, 58, 242) , 0 0 7.5px lightblue;
+    }
+}
+
+.nomes{
+    display: flex;
+    align-items: flex-start;
+}
+
+.nomes span{
+    font-size: 11px;
+}
+
+.nome-left{
+    margin-top: 5px;
+    width: 70px;
+    border-radius: 10px 60px;
+    border: 1px solid lightblue;
+    background-color: rgb(0, 0, 0);
+    
+}
+
+.nome-left span{
+    color: rgb(47, 169, 210);
+    font-family: 'Royal Fighter';
+    position: relative;
+    right: -15px;
+}
+
+.nome-right{
+    margin-top: 5px;
+    width: 70px;
+    border-radius: 10px 60px;
+    border: 1px solid red;
+    position: relative;
+    background-color: black;
+    left: 11rem;
+}
+
+.nome-right span{
+    font-family: 'Royal Fighter';
+    color: brown;
+    position: relative;
+    left: 9px;
+}
